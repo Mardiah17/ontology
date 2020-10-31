@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/yuuma/ontologies/university.owl#"
+     xml:base="http://www.semanticweb.org/yuuma/ontologies/university.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="tes"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#studies -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#studies">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#studies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Student"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#studies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Module"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#teaches -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#teaches">
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#teaches"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Module"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#teaches"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Lecture"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#first_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#first_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#last_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#last_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#staffID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#staffID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Lecture"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#studentID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#studentID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Student"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#CSModule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#CSModule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Module"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#Lecture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#Lecture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#MathModule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#MathModule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Module"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#Module -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#Module"/>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#Student -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#Student">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#CS101 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#CS101">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#CSModule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#CS103 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#CS103">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#CSModule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#Lecture1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#Lecture1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Lecture"/>
+        <staffID rdf:datatype="&xsd;integer">12345</staffID>
+        <first_name rdf:datatype="&xsd;string">Arsene</first_name>
+        <last_name rdf:datatype="&xsd;string">Ucul</last_name>
+        <teaches rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#CS101"/>
+        <teaches rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#M201"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#Lecture2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#Lecture2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#Lecture"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#M201 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#M201">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#MathModule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#M202 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#M202">
+        <rdf:type rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#MathModule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#Student1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#Student1">
+        <studentID rdf:datatype="&xsd;integer">54321</studentID>
+        <first_name rdf:datatype="&xsd;string">Anya</first_name>
+        <last_name rdf:datatype="&xsd;string">Nanan</last_name>
+        <studies rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#CS101"/>
+        <studies rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#M201"/>
+        <studies rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#M202"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#Student2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#Student2">
+        <studies rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#M202"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/yuuma/ontologies/university.owl#Student3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#Student3">
+        <studies rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#CS103"/>
+        <studies rdf:resource="http://www.semanticweb.org/yuuma/ontologies/university.owl#M202"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#CSModule"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#Lecture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#MathModule"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/yuuma/ontologies/university.owl#Student"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
