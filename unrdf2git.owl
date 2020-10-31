@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY unrdf2 "https://github.com/Mardiah17/ontology/raw/main/unrdf2.owl#" >
+    <!ENTITY unrdf2git "https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/yuuma/ontologies/university.owl#"
+     xml:base="http://www.semanticweb.org/yuuma/ontologies/university.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:unrdf2git="https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:unrdf2="https://github.com/Mardiah17/ontology/raw/main/unrdf2.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#studies -->
+
+    <owl:ObjectProperty rdf:about="&unrdf2git;studies">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&unrdf2git;studies"/>
+                <owl:someValuesFrom rdf:resource="&unrdf2git;Student"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&unrdf2git;studies"/>
+                <owl:someValuesFrom rdf:resource="&unrdf2git;Module"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#teaches -->
+
+    <owl:ObjectProperty rdf:about="&unrdf2git;teaches">
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&unrdf2git;teaches"/>
+                <owl:someValuesFrom rdf:resource="&unrdf2git;Module"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&unrdf2git;teaches"/>
+                <owl:someValuesFrom rdf:resource="&unrdf2git;Lecture"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#first_name -->
+
+    <owl:DatatypeProperty rdf:about="&unrdf2git;first_name">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&unrdf2git;Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#last_name -->
+
+    <owl:DatatypeProperty rdf:about="&unrdf2git;last_name">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&unrdf2git;Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#staffID -->
+
+    <owl:DatatypeProperty rdf:about="&unrdf2git;staffID">
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain rdf:resource="&unrdf2git;Lecture"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#studentID -->
+
+    <owl:DatatypeProperty rdf:about="&unrdf2git;studentID">
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain rdf:resource="&unrdf2git;Student"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#CSModule -->
+
+    <owl:Class rdf:about="&unrdf2git;CSModule">
+        <rdfs:subClassOf rdf:resource="&unrdf2git;Module"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#Lecture -->
+
+    <owl:Class rdf:about="&unrdf2git;Lecture">
+        <rdfs:subClassOf rdf:resource="&unrdf2git;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#MathModule -->
+
+    <owl:Class rdf:about="&unrdf2git;MathModule">
+        <rdfs:subClassOf rdf:resource="&unrdf2git;Module"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#Module -->
+
+    <owl:Class rdf:about="&unrdf2git;Module"/>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#Person -->
+
+    <owl:Class rdf:about="&unrdf2git;Person"/>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#Student -->
+
+    <owl:Class rdf:about="&unrdf2git;Student">
+        <rdfs:subClassOf rdf:resource="&unrdf2git;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#CS101 -->
+
+    <owl:NamedIndividual rdf:about="&unrdf2git;CS101">
+        <rdf:type rdf:resource="&unrdf2git;CSModule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#CS103 -->
+
+    <owl:NamedIndividual rdf:about="&unrdf2git;CS103">
+        <rdf:type rdf:resource="&unrdf2git;CSModule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#Lecture1 -->
+
+    <owl:NamedIndividual rdf:about="&unrdf2git;Lecture1">
+        <rdf:type rdf:resource="&unrdf2git;Lecture"/>
+        <unrdf2git:staffID rdf:datatype="&xsd;integer">12345</unrdf2git:staffID>
+        <unrdf2git:first_name rdf:datatype="&xsd;string">Arsene</unrdf2git:first_name>
+        <unrdf2git:last_name rdf:datatype="&xsd;string">Ucul</unrdf2git:last_name>
+        <unrdf2git:teaches rdf:resource="&unrdf2git;CS101"/>
+        <unrdf2git:teaches rdf:resource="&unrdf2git;M201"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#Lecture2 -->
+
+    <owl:NamedIndividual rdf:about="&unrdf2git;Lecture2">
+        <rdf:type rdf:resource="&unrdf2git;Lecture"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#M201 -->
+
+    <owl:NamedIndividual rdf:about="&unrdf2git;M201">
+        <rdf:type rdf:resource="&unrdf2git;MathModule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#M202 -->
+
+    <owl:NamedIndividual rdf:about="&unrdf2git;M202">
+        <rdf:type rdf:resource="&unrdf2git;MathModule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#Student1 -->
+
+    <owl:NamedIndividual rdf:about="&unrdf2git;Student1">
+        <unrdf2git:studentID rdf:datatype="&xsd;integer">54321</unrdf2git:studentID>
+        <unrdf2git:first_name rdf:datatype="&xsd;string">Anya</unrdf2git:first_name>
+        <unrdf2git:last_name rdf:datatype="&xsd;string">Nanan</unrdf2git:last_name>
+        <unrdf2git:studies rdf:resource="&unrdf2git;CS101"/>
+        <unrdf2git:studies rdf:resource="&unrdf2git;M201"/>
+        <unrdf2git:studies rdf:resource="&unrdf2git;M202"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#Student2 -->
+
+    <owl:NamedIndividual rdf:about="&unrdf2git;Student2">
+        <unrdf2git:studies rdf:resource="&unrdf2git;M202"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/Mardiah17/ontology/raw/main/unrdf2git.owl#Student3 -->
+
+    <owl:NamedIndividual rdf:about="&unrdf2git;Student3">
+        <unrdf2git:studies rdf:resource="&unrdf2git;CS103"/>
+        <unrdf2git:studies rdf:resource="&unrdf2git;M202"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&unrdf2git;CSModule"/>
+            <rdf:Description rdf:about="&unrdf2git;Lecture"/>
+            <rdf:Description rdf:about="&unrdf2git;MathModule"/>
+            <rdf:Description rdf:about="&unrdf2git;Student"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
