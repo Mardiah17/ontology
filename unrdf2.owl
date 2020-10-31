@@ -9,8 +9,8 @@
 ]>
 
 
-<rdf:RDF xmlns="http://www.semanticweb.org/yuuma/ontologies/university.owl#"
-     xml:base="http://www.semanticweb.org/yuuma/ontologies/university.owl"
+<rdf:RDF xmlns="https://github.com/Mardiah17/ontology/raw/main/unrdf2.owl#"
+     xml:base="https://github.com/Mardiah17/ontology/raw/main/unrdf2.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
